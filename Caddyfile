@@ -1,0 +1,7 @@
+http://frankenphp-websocket-wasm-kanban.local:8080 {
+	encode zstd br gzip
+	root ./public
+	php_server {
+		root ./public
+	}
+}
