@@ -1,5 +1,6 @@
 {
     "name"    : "kevinfrom/frankenphp-websocket-wasm-kanban",
+    "type"    : "project",
     "require" : {
         "php": "^8.4"
     },
