@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http;
 
 use FastRoute\Dispatcher;
+use RuntimeException;
 
 final readonly class Router
 {
@@ -32,7 +33,11 @@ final readonly class Router
                 $handler = $route[1];
                 $params  = $route[2];
 
-                // @TODO: Handle this
+                if (!is_callable($handler)) {
+                    throw new RuntimeException('Handler is not callable');
+                }
+
+                call_user_func($handler, $params);
         }
 
         exit;
